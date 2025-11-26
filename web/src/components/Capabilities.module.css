@@ -1,0 +1,79 @@
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for flexibility */
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1.5rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    cursor: grab;
+    /* Indicate draggable */
+    position: relative;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+/* Bento Spans */
+.cardLarge {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.cardSmall {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.cardWide {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .cardLarge,
+    .cardSmall,
+    .cardWide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}

@@ -1,0 +1,101 @@
+.container {
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border-light);
+}
+
+.heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.highlight {
+    color: var(--accent-primary);
+}
+
+.subheading {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.tGraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.breadthRow {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.breadthNode {
+    background: var(--bg-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 100px;
+}
+
+.breadthNode:hover {
+    border-color: var(--accent-tertiary);
+    color: var(--text-primary);
+}
+
+.depthColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 300px;
+    /* Constrain width to create the "stem" of the T */
+}
+
+.depthNode {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.depthNode:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-primary);
+}
+
+.depthTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.depthDesc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .breadthRow {
+        flex-wrap: wrap;
+    }
+
+    .depthColumn {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,38 @@
+.footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.link {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--text-primary);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .footerContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

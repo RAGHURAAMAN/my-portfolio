@@ -1,0 +1,43 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.item {
+    break-inside: avoid;
+}
+
+.imageWrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+    background: #f0f0f0;
+}
+
+.item:hover .imageWrapper {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.item:hover .image {
+    transform: scale(1.03);
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+}

@@ -1,0 +1,120 @@
+.cardContainer {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.left {
+    left: 0;
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: var(--text-muted);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    position: relative;
+}
+
+.info {
+    padding: 1.5rem;
+}
+
+.year {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: inherit;
+    /* Aligns tags based on text-align of parent */
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 0, 0, 0.05);
+    /* Darker background for light theme */
+    border-radius: 100px;
+    color: var(--text-secondary);
+}
+
+.node {
+    position: absolute;
+    top: 2.5rem;
+    /* Align with top of card content roughly */
+    width: 12px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg-primary);
+    z-index: 10;
+}
+
+.left .node {
+    right: -6px;
+}
+
+.right .node {
+    left: -6px;
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 3rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .tags {
+        justify-content: flex-start;
+    }
+
+    .node {
+        left: 6px !important;
+        /* Position on the line which will be on the left */
+    }
+}
