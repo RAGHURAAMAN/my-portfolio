@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Capabilities from '../components/Capabilities';
 import RecentWorks from '../components/RecentWorks';
+import HeroLight from '../components/HeroLight';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -14,8 +15,10 @@ const Home = () => {
     return (
         <>
             <div className={styles.heroContainer}>
-                {/* Subtle Background Gradient */}
-                <div className={styles.backgroundGradient}></div>
+                {/* Volumetric Light Effect */}
+
+                {/* Volumetric Light Effect */}
+                <HeroLight />
 
                 <div className={styles.contentWrapper}>
                     <motion.div

@@ -93,18 +93,20 @@
    or rely on the class. The JSX had a motion div, let's style it.
 */
 
+.navLink:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
 .activeBackground {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    /* Subtle highlight */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Definition */
     border-radius: 100px;
     z-index: 1;
-    opacity: 0;
-    /* Hidden by default, shown when active via React logic if we want */
-}
-
-.navLink.active .activeBackground {
-    opacity: 1;
 }
 
 @media (max-width: 768px) {

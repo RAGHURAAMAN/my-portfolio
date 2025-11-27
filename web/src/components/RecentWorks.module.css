@@ -105,8 +105,17 @@
 @media (max-width: 768px) {
     .folderGrid {
         grid-template-columns: 1fr;
-        /* Stack on mobile */
-        justify-items: center;
-        /* Center items in the single column */
+        /* Single column on mobile */
+        padding: 0 1rem;
+        gap: 3rem;
+        /* More space between stacked folders */
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .heading {
+        font-size: 2rem;
     }
 }

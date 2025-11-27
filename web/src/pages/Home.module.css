@@ -41,7 +41,8 @@
     text-align: center;
     max-width: 900px;
     padding: 0 2rem;
-    z-index: 1;
+    z-index: 2;
+    /* Ensure content is above light beams */
 }
 
 .intro {
@@ -127,14 +128,41 @@
 }
 
 @media (max-width: 768px) {
+    .heroContainer {
+        padding-top: calc(var(--header-height) + 2rem);
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 4rem;
+    }
+
+    .name {
+        font-size: 3.5rem;
+        /* Smaller on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .headline {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtext {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
     .badges {
-        flex-direction: column;
+        flex-direction: row;
+        /* Keep row but wrap */
+        flex-wrap: wrap;
         gap: 0.75rem;
     }
 
     .badge {
-        width: 100%;
-        justify-content: center;
+        width: auto;
+        /* Let them size naturally */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 }
 

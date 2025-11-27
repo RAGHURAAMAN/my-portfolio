@@ -74,6 +74,25 @@
     /* No content padding needed if empty, but keeping consistent size */
 }
 
+@media (max-width: 768px) {
+    .folderContainer {
+        height: 220px;
+        /* Slightly shorter */
+    }
+
+    .folderFront {
+        height: 120px;
+    }
+
+    .paper {
+        padding: 0.75rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+}
+
 .imageWrapper {
     width: 100%;
     height: 120px;

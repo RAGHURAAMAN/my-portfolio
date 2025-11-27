@@ -46,14 +46,19 @@ const Navbar = () => {
                                         `${styles.navLink} ${isActive ? styles.active : ''}`
                                     }
                                 >
-                                    <span className={styles.icon}>{item.icon}</span>
-                                    <span className={styles.label}>{item.label}</span>
-                                    {/* Active Indicator Background */}
-                                    <motion.div
-                                        className={styles.activeBackground}
-                                        layoutId="navbar-active"
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
+                                    {({ isActive }) => (
+                                        <>
+                                            <span className={styles.icon}>{item.icon}</span>
+                                            <span className={styles.label}>{item.label}</span>
+                                            {isActive && (
+                                                <motion.div
+                                                    className={styles.activeBackground}
+                                                    layoutId="navbar-active"
+                                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                />
+                                            )}
+                                        </>
+                                    )}
                                 </NavLink>
                             )}
                         </li>
