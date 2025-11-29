@@ -10,25 +10,25 @@ const RecentWorks = () => {
         {
             id: 1,
             title: "Compensation Tool",
-            role: "SaaS Product",
+            description: "Zero-to-one SaaS product for enterprise compensation planning",
             duration: "2024",
-            color: '#F3F4F6', // Unified Subtle Gray
+            color: 'var(--bento-blue)',
             image: "/projects/project_thumbnail_compensation_1764131038904.png",
         },
         {
             id: 2,
             title: "Fintech Dashboard",
-            role: "UI Design",
+            description: "Real-time analytics and reporting for financial teams",
             duration: "2023",
-            color: '#F3F4F6', // Unified Subtle Gray
+            color: 'var(--bento-purple)',
             image: "/projects/project_thumbnail_fintech_1764131056651.png",
         },
         {
             id: 3,
             title: "Travel App",
-            role: "Mobile UX",
+            description: "Mobile experience for collaborative trip planning",
             duration: "2023",
-            color: '#F3F4F6', // Unified Subtle Gray
+            color: 'var(--bento-green)',
             image: "/projects/project_thumbnail_travel_1764131302186.png",
         },
     ];

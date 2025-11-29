@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PhotoGallery from '../components/PhotoGallery';
 import AboutBento from '../components/AboutBento';
+import JourneyTimeline from '../components/JourneyTimeline';
 import styles from './About.module.css';
 
 const About = () => {
@@ -68,20 +69,8 @@ const About = () => {
                     </section>
 
                     <section className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Where I am now</h2>
-                        <p>
-                            I work as a Senior UX Designer at [Company], designing [type of products]. Most of my time goes into understanding how people use [domain] tools, mapping messy workflows, and turning them into interfaces that feel calm and predictable.
-                        </p>
-                    </section>
-
-                    <section className={styles.section}>
-                        <h2 className={styles.sectionTitle}>How I got here</h2>
-                        <p>
-                            The first time design felt real to me was when... [Story placeholder]. Before design, I spent my time... [Story placeholder].
-                        </p>
-                        <p>
-                            The moment I decided to shift from development to design was when... [Story placeholder].
-                        </p>
+                        <h2 className={styles.sectionTitle}>My Journey</h2>
+                        <JourneyTimeline />
                     </section>
 
                     <section className={styles.section}>

@@ -1,0 +1,88 @@
+.timelineContainer {
+    padding: 2rem 0;
+}
+
+.timelinePath {
+    position: relative;
+}
+
+.timelineStep {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timelineStep:last-child {
+    margin-bottom: 0;
+}
+
+.stepIndicator {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    border: 4px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--accent-primary);
+    z-index: 2;
+}
+
+.line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom,
+            var(--accent-primary),
+            var(--border-light));
+    margin-top: 0.5rem;
+    min-height: 60px;
+}
+
+.stepContent {
+    flex: 1;
+    padding-bottom: 1rem;
+}
+
+.stepYear {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.stepLabel {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.stepDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .timelineStep {
+        gap: 1.5rem;
+    }
+
+    .stepLabel {
+        font-size: 1.1rem;
+    }
+
+    .stepDescription {
+        font-size: 0.95rem;
+    }
+}

@@ -1,9 +1,8 @@
 .toc {
-    position: fixed;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    z-index: 10;
 }
 
 .scaleContainer {

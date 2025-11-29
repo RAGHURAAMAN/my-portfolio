@@ -14,7 +14,7 @@ const ProjectFolder = ({ project, onClick, index }) => {
             whileTap={{ scale: 0.98 }}
         >
             {/* Folder Back (Static) */}
-            <div className={styles.folderBack} style={{ backgroundColor: project.color }}>
+            <div className={styles.folderBack} style={{ '--folder-color': project.color }}>
                 <div className={styles.tab}>
                     <span className={styles.duration}>{project.duration}</span>
                 </div>
@@ -53,16 +53,14 @@ const ProjectFolder = ({ project, onClick, index }) => {
                         <div className={styles.placeholderImage} />
                     )}
                 </div>
-                <div className={styles.info}>
-                    <h3 className={styles.title}>{project.title}</h3>
-                    <p className={styles.role}>{project.role}</p>
-                </div>
+                {/* Title removed from here as per user request, moved to front */}
             </motion.div>
 
             {/* Folder Front (Static Cover) */}
-            <div className={styles.folderFront} style={{ backgroundColor: project.color }}>
+            <div className={styles.folderFront} style={{ '--folder-color': project.color }}>
                 <div className={styles.frontContent}>
                     <span className={styles.folderLabel}>{project.title}</span>
+                    <p className={styles.folderDescription}>{project.description}</p>
                 </div>
             </div>
         </motion.div>

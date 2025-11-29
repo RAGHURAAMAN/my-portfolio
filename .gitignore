@@ -118,3 +118,8 @@ dist
 
 # macOS
 .DS_Store
+
+# Private files
+Private & Shared/
+about_me.md
+Compensation project.txt

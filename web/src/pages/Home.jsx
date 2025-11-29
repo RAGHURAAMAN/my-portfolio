@@ -7,9 +7,9 @@ import styles from './Home.module.css';
 
 const Home = () => {
     const traits = [
-        { label: "Intuitive", icon: "🧠", color: "#cffafe", borderColor: "#22d3ee" },
         { label: "Introspective", icon: "🔍", color: "#e0e7ff", borderColor: "#818cf8" },
-        { label: "Charismatic", icon: "🧿", color: "#dcfce7", borderColor: "#4ade80" },
+        { label: "Intuitive", icon: "🧠", color: "#cffafe", borderColor: "#22d3ee" },
+        { label: "Systems-first", icon: "🧿", color: "#dcfce7", borderColor: "#4ade80" },
     ];
 
     return (
@@ -56,7 +56,7 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.8 }}
                     >
-                        <span className={styles.imText}>I’m</span>
+                        <span className={styles.imText}>How I work:</span>
                         <div className={styles.badges}>
                             {traits.map((trait, index) => (
                                 <motion.div
@@ -77,11 +77,36 @@ const Home = () => {
                             ))}
                         </div>
                     </motion.div>
+
+                    {/* Scroll to Explore Indicator */}
+                    <motion.div
+                        className={styles.scrollIndicator}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1.5, duration: 0.8 }}
+                        onClick={() => {
+                            document.getElementById('capabilities-section')?.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }}
+                    >
+                        <motion.div
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{
+                                duration: 2,
+                                ease: "easeInOut",
+                                repeat: Infinity
+                            }}
+                        >
+                            ↓ Scroll to explore
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
 
             {/* Skills Section */}
-            <div className={styles.sectionContainer}>
+            <div className={styles.sectionContainer} id="capabilities-section">
                 <Capabilities />
             </div>
 

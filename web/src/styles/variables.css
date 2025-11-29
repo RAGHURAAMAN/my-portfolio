@@ -12,7 +12,15 @@
     /* Indigo/Blue similar to reference */
     --accent-glow: rgba(79, 70, 229, 0.1);
 
-    --accent-secondary: #e0e7ff;
+    --accent-secondary: #f59e0b;
+    /* Amber */
+
+    /* Bento card colors */
+    --bento-blue: #E8F4F8;
+    --bento-purple: #F0E8F8;
+    --bento-green: #E8F8F0;
+    --bento-cream: #F8F0E8;
+
     --accent-tertiary: #c7d2fe;
 
     --border-light: #e5e5e5;

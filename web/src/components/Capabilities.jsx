@@ -1,25 +1,28 @@
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { RotateCcw } from 'lucide-react';
 import styles from './Capabilities.module.css';
 
 const Capabilities = () => {
     const containerRef = useRef(null);
+    const [hasBeenDragged, setHasBeenDragged] = useState(false);
+    const [resetKey, setResetKey] = useState(0);
 
     const cards = [
         {
             id: "product",
             title: "Product Designer",
-            desc: "Building digital products with elegant and intuitive designs.",
-            color: "#F3F4F6", // Light Gray (Harmony)
+            desc: "Systems-first design for enterprise tools. I map flows, dependencies, and edge cases before touching visuals.",
+            color: "#E8F4F8", // Light blue
             textColor: "#1F2937",
-            className: styles.cardLarge, // Spans 2 cols
+            className: styles.cardLarge,
             delay: 0
         },
         {
             id: "ux",
             title: "UX Researcher",
-            desc: "Actionable insights for user satisfaction.",
-            color: "#E5E7EB", // Slightly darker gray
+            desc: "Research that drives decisions. I turn user interviews and data into clear, prioritized insights.",
+            color: "#F0E8F8", // Light purple
             textColor: "#1F2937",
             className: styles.cardSmall,
             delay: 0.1
@@ -27,8 +30,8 @@ const Capabilities = () => {
         {
             id: "service",
             title: "Service Designer",
-            desc: "Optimizing user journeys with clear thinking.",
-            color: "#D1D5DB", // Even darker gray
+            desc: "End-to-end journey mapping. I design across touchpoints to make processes smoother for teams and users.",
+            color: "#E8F8F0", // Light green
             textColor: "#1F2937",
             className: styles.cardSmall,
             delay: 0.2
@@ -36,26 +39,50 @@ const Capabilities = () => {
         {
             id: "eng",
             title: "Software Engineer",
-            desc: "Cooking designs into code for fun.",
-            color: "#9CA3AF", // Darkest gray accent
-            textColor: "#FFFFFF", // White text for contrast
-            className: styles.cardWide, // Spans full width
+            desc: "Design-to-code handoff with precision. I prototype in React to validate ideas fast and communicate with engineers.",
+            color: "#F8F0E8", // Light cream/beige
+            textColor: "#1F2937",
+            className: styles.cardWide,
             delay: 0.3
         }
     ];
 
+    const handleReset = () => {
+        setResetKey(prev => prev + 1);
+        setHasBeenDragged(false);
+    };
+
     return (
         <div className={styles.container} ref={containerRef}>
-            <motion.h3
-                className={styles.heading}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-            >
-                What you’ll get
-            </motion.h3>
+            <div className={styles.headerContainer}>
+                <motion.h3
+                    className={styles.heading}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    What you'll get
+                </motion.h3>
 
-            <div className={styles.bentoGrid}>
+                <AnimatePresence>
+                    {hasBeenDragged && (
+                        <motion.button
+                            className={styles.resetButton}
+                            onClick={handleReset}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            title="Reset Layout"
+                        >
+                            <RotateCcw size={20} />
+                        </motion.button>
+                    )}
+                </AnimatePresence>
+            </div>
+
+            <div className={styles.bentoGrid} key={resetKey}>
                 {cards.map((card) => (
                     <motion.div
                         key={card.id}
@@ -67,6 +94,8 @@ const Capabilities = () => {
                         viewport={{ once: true }}
                         drag
                         dragConstraints={containerRef}
+                        dragElastic={0.1}
+                        onDragStart={() => setHasBeenDragged(true)}
                         whileHover={{ scale: 1.02, zIndex: 10 }}
                         whileDrag={{ scale: 1.05, zIndex: 20, cursor: 'grabbing' }}
                     >
