@@ -1,90 +1,98 @@
 .bentoContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: repeat(2, 200px);
     gap: 1.5rem;
     width: 100%;
-    margin: 2rem 0;
 }
 
 .card {
+    background: #FFFFFF;
+    /* Pure white */
     border-radius: 24px;
+    /* Larger, smoother corners */
     padding: 2rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    transition: box-shadow 0.3s ease;
-    cursor: default;
+    justify-content: space-between;
+    border: 1px solid #E5E7EB;
+    /* Tailwind gray-200 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    /* Almost invisible default shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
+    /* Shadow handled by framer-motion */
 }
 
-/* Sizes */
 .cardLarge {
     grid-column: span 2;
-    grid-row: span 2;
 }
 
 .cardWide {
-    grid-column: span 2;
+    grid-column: span 3;
 }
 
 .cardSmall {
     grid-column: span 1;
 }
 
-/* Styles */
-/* Styles */
+/* Background Shapes - Diffused Ambient Light */
+.cardBg {
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 140%;
+    height: 140%;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.05;
+    /* Extremely subtle */
+}
+
 .bgBlue {
-    background-color: var(--bento-blue);
-    color: var(--text-primary);
+    background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
 }
 
 .bgPurple {
-    background-color: var(--bento-purple);
-    color: var(--text-primary);
+    background: radial-gradient(circle, #A855F7 0%, transparent 70%);
 }
 
 .bgGreen {
-    background-color: var(--bento-green);
-    color: var(--text-primary);
+    background: radial-gradient(circle, #22C55E 0%, transparent 70%);
 }
 
 .bgCream {
-    background-color: var(--bento-cream);
-    color: var(--text-primary);
+    background: radial-gradient(circle, #FB923C 0%, transparent 70%);
 }
 
 /* Content */
 .cardContent {
-    z-index: 2;
-    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    z-index: 2;
 }
 
-.cardContent h3 {
-    font-size: 1.5rem;
+.card h3 {
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    line-height: 1.2;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
-.cardContent p {
-    font-size: 1rem;
+.card p {
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.5;
 }
-
 
 
 /* Responsive */
@@ -95,10 +103,9 @@
     }
 
     .cardLarge,
-    .cardWide,
-    .cardSmall {
+    .cardSmall,
+    .cardWide {
         grid-column: span 1;
-        grid-row: span 1;
-        min-height: 250px;
+        min-height: 180px;
     }
 }

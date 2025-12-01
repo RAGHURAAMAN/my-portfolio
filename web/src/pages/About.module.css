@@ -14,6 +14,45 @@
     top: calc(var(--header-height) + 2rem);
 }
 
+.introSection {
+    margin-bottom: 6rem;
+    max-width: 800px;
+}
+
+.mainTitle {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.introText {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 600px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 3rem;
+    }
+
+    .introText {
+        font-size: 1.2rem;
+    }
+}
+
 .profileSection {
     margin-bottom: 2.5rem;
 }
