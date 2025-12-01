@@ -63,7 +63,7 @@ const KeychainFooter = () => {
 
     return (
         <footer className={styles.footerContainer} ref={containerRef}>
-            <div className={styles.glow} />
+
 
             <div className={styles.rodContainer}>
                 <div className={styles.rod} />
