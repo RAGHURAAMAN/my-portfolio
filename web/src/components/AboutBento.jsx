@@ -114,7 +114,7 @@ const AboutBento = () => {
 
             {/* Card 4: Playful Exploration (Wide) */}
             <motion.div
-                className={`${styles.card} ${styles.cardWide}`}
+                className={`${styles.card} ${styles.cardLarge}`}
                 variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] } }

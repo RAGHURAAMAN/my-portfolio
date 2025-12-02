@@ -22,13 +22,6 @@
     justify-content: center;
 }
 
-/* Tooltip Container now wraps the Heading */
-.tooltipContainer {
-    position: relative;
-    display: inline-block;
-    cursor: help;
-}
-
 .heading {
     font-size: 2.5rem;
     color: var(--text-primary);
@@ -37,45 +30,6 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-}
-
-.helpIcon {
-    color: var(--text-secondary);
-    opacity: 0.4;
-    transition: opacity 0.2s;
-    margin-top: 4px;
-    /* Align visually with text */
-}
-
-.tooltipContainer:hover .helpIcon {
-    opacity: 1;
-}
-
-.tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background: var(--text-primary);
-    color: var(--bg-primary);
-    padding: 1rem;
-    border-radius: 12px;
-    width: 220px;
-    font-size: 0.9rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    text-align: center;
-    line-height: 1.5;
-}
-
-.tooltipContainer:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-15px);
 }
 
 .viewAll {
@@ -91,26 +45,12 @@
     border-color: var(--accent-primary);
 }
 
-.folderGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 320px);
-    /* Fixed width columns to prevent stretching */
-    justify-content: center;
-    /* Center the grid tracks */
-    gap: 3rem;
+.listContainer {
     width: 100%;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 @media (max-width: 768px) {
-    .folderGrid {
-        grid-template-columns: 1fr;
-        /* Single column on mobile */
-        padding: 0 1rem;
-        gap: 3rem;
-        /* More space between stacked folders */
-    }
-
     .header {
         margin-bottom: 2rem;
     }

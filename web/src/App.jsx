@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import KeychainFooter from './components/KeychainFooter';
+import FloatingNote from './components/FloatingNote'; // Added this line
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
+        <FloatingNote />
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />

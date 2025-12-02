@@ -4,7 +4,7 @@ import { ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectList.module.css';
 
-const ProjectList = ({ projects }) => {
+const ProjectList = ({ projects, showIcons = true }) => {
     const [expandedId, setExpandedId] = useState(projects[0]?.id || 1);
 
     const toggleExpand = (id) => {
@@ -29,7 +29,7 @@ const ProjectList = ({ projects }) => {
                             onClick={() => toggleExpand(project.id)}
                         >
                             <div className={styles.colName}>
-                                <span className={styles.folderIcon}>📂</span>
+                                {showIcons && <span className={styles.folderIcon}>📂</span>}
                                 {project.title}
                             </div>
                             <div className={styles.colCategory}>{project.role || project.category}</div>

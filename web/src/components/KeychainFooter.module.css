@@ -165,19 +165,28 @@
 
 @media (max-width: 768px) {
     .rodContainer {
-        width: 90%;
-        overflow-x: auto;
-        /* Maybe scroll if too many items? */
-        /* For now, just scale or wrap? Physics works best absolute. 
-           Let's keep absolute but scale down gap. */
+        width: 95%;
+        /* Allow more width on mobile */
     }
 
     .tag {
-        padding: 0.6rem 1rem;
-        min-width: 100px;
+        padding: 0.5rem 0.8rem;
+        min-width: auto;
+        /* Allow shrinking */
+        border-radius: 8px;
     }
 
     .label {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footerContainer {
+        height: 250px;
+        /* Even more compact on mobile */
     }
 }

@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Mail, Linkedin, Twitter, Github, FileText } from 'lucide-react';
 import styles from './KeychainFooter.module.css';
 
-const KeychainItem = ({ icon: Icon, label, href, index, total, color, dragConstraints }) => {
+const KeychainItem = ({ icon: Icon, label, href, index, total, color, dragConstraints, spacing }) => {
     // Calculate position on the rod
     // Center the group of items
-    const spacing = 160; // Space between items
+    // const spacing is now passed as prop
     const totalWidth = (total - 1) * spacing;
     const startX = -totalWidth / 2;
     const x = startX + index * spacing;
@@ -59,6 +59,24 @@ const KeychainFooter = () => {
         { label: 'Resume', icon: FileText, href: '#', color: '#ffe4e6' }, // Pastel Rose
     ];
 
+    const [spacing, setSpacing] = React.useState(160);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 640) {
+                setSpacing(80); // Tighter spacing for mobile
+            } else if (window.innerWidth < 1024) {
+                setSpacing(120); // Medium spacing for tablet
+            } else {
+                setSpacing(160); // Default spacing
+            }
+        };
+
+        handleResize(); // Set initial
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const containerRef = React.useRef(null);
 
     return (
@@ -74,6 +92,7 @@ const KeychainFooter = () => {
                         {...link}
                         index={index}
                         total={links.length}
+                        spacing={spacing}
                         dragConstraints={containerRef}
                     />
                 ))}
